@@ -16,6 +16,8 @@ public abstract class VeiculoEntity implements VeiculoInterface{
 	
 	private List<String> nomeMotorista; //= {"João","Talissa", "Jefferson"};
 	
+	private static Integer NUMERO_RETROVISORES = 2; // constante
+	
 	public VeiculoEntity() {
 	}
 	

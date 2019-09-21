@@ -1,6 +1,10 @@
 package br.com.linsper.treinamento.entity;
 
-public class VeiculoEntity{
+import java.util.List;
+
+import br.com.linsper.treinamento.interfaces.VeiculoInterface;
+
+public abstract class VeiculoEntity implements VeiculoInterface{
 
 	protected String placa;
 	protected int numeroPortas;
@@ -10,8 +14,24 @@ public class VeiculoEntity{
 	protected String cor;
 	protected String chassi;
 	
+	private List<String> nomeMotorista; //= {"João","Talissa", "Jefferson"};
+	
+	public VeiculoEntity() {
+	}
+	
+	public VeiculoEntity(int numeroMotoristas){
+	}
+	
+	public List<String> getNomeMotorista() {
+		return nomeMotorista;
+	}
+	
+	public void setNomeMotorista(List<String> nomeMotorista) {
+		this.nomeMotorista = nomeMotorista;
+	}
+	
 	public String getPlaca() {
-		return placa == null ? "" : placa;
+		return placa;
 	}
 	public void setPlaca(String placa) {
 		this.placa = placa;
@@ -31,6 +51,10 @@ public class VeiculoEntity{
 	public int getAnoFabricacao() {
 		return anoFabricacao;
 	}
+	
+	/**
+	 * Método usado para definir o ano da fabricação
+	 * */
 	public void setAnoFabricacao(int anoFabricacao) {
 		this.anoFabricacao = anoFabricacao;
 	}

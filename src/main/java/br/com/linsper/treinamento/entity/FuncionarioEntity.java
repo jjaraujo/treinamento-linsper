@@ -1,13 +1,28 @@
 package br.com.linsper.treinamento.entity;
 
-public class FuncionarioEntity {
+import java.util.UUID;
 
-	protected int id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+ 
+@Entity
+@Table(name = "funcionario")
+public class FuncionarioEntity {
+	
+	@Id
+	protected UUID id;
 	protected String nome;
 	protected String  telefonePessoal;
 	protected String  tipoFuncionario;
 	protected String  dataContratacao;
+	@ManyToOne // anotação para definir chave estrangeira
+	@JoinColumn // para fazer o join da coluna endereco com acoluna  id da tabela endereco 
 	protected EnderecoEntity endereco;
+	@ManyToOne
+	@JoinColumn
 	protected EmpresaEntity empresa;
 	protected double salario;
 	
@@ -20,14 +35,13 @@ public class FuncionarioEntity {
 
 	}
 	
-	
-	public int getId() {
+	public UUID getId() {
 		return id;
 	}
-	public void setId(int id, String nome) {
+	public void setId(UUID id, String nome) {
 		this.id = id;
 	}
-	public void setId(int id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 	public String getNome() {

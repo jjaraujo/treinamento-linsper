@@ -1,8 +1,17 @@
 package br.com.linsper.treinamento.entity;
 
+import java.util.UUID;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "endereco")
 public class EnderecoEntity {
 
-	private int id;	
+	@Id
+	private UUID id;	
 	private String numero;
 	private String cep;
 	private String rua;
@@ -10,10 +19,10 @@ public class EnderecoEntity {
 	private String estado;
 	private String cidade;
 	
-	public int getId() {
+	public UUID getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 	public String getNumero() {

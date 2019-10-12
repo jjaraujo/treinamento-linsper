@@ -1,11 +1,24 @@
 package br.com.linsper.treinamento.entity;
 
+import java.util.UUID;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "empresa")
 public class EmpresaEntity {
 	
-	public Integer id;
+	@Id
+	public UUID id;
 	private String razaoSocial;
 	private String cnpj;
 	private String telefone;
+	@ManyToOne
+	@JoinColumn
 	private EnderecoEntity endereco;
 	
 	public static int variavelStatic;
@@ -14,15 +27,15 @@ public class EmpresaEntity {
 
 	}
 
-	public Integer getId() {
-		return id * 7;
+	public UUID getId() {
+		return id;
 	}
 	/**
 	 * NAO PODE RECEBER VALOR NULO
 	 * */
-	public void setId(Integer id) {
+	public void setId(UUID id) {
 		if(id == null) {
-			this.id = 0;
+			this.id = UUID.randomUUID();
 			return;
 		}
 		this.id = id;

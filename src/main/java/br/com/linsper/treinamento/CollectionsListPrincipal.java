@@ -6,7 +6,7 @@ import java.util.List;
 import br.com.linsper.treinamento.entity.CarroEntity;
 import br.com.linsper.treinamento.entity.VeiculoEntity;
 
-public class CollectionsPrincipal {
+public class CollectionsListPrincipal {
 
 	public static void main(String[] args) {
 		VeiculoEntity veiculo = new CarroEntity(); // polimorfismo (o Carro entity é um veículo graças a herança)

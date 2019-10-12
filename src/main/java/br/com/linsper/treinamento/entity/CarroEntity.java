@@ -32,8 +32,15 @@ public class CarroEntity extends VeiculoEntity{
 		return "VERDE";
 	}
 
-
 	public double tamanhoVolante() {
 		return 20.5;
 	}
+	
+	@Override
+	public String toString() {
+		return "'Chassi: " + chassi + ", Placa: " + placa + "'";
+	}
+	
+	
+	
 }

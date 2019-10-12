@@ -25,6 +25,5 @@ public class CollectionsPrincipal {
 		
 		nomes.add("Jefferson");
 		System.out.println(nomes);
-		
 	}
 }
